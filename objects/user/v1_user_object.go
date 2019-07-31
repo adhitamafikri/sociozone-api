@@ -1,7 +1,8 @@
 package objects
 
+// User struct represents user object in MongoDB
 type User struct {
-	name     string
-	username string
-	password string
+	Name     string
+	Username string
+	Password string
 }

@@ -9,16 +9,11 @@ import (
 	LoginController "github.com/adhitamafikri/sociozone-api/controllers/login"
 	RegisterController "github.com/adhitamafikri/sociozone-api/controllers/register"
 	UserController "github.com/adhitamafikri/sociozone-api/controllers/user"
-
-	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
 )
 
 func main() {
 	fmt.Println("Welcome to Sociozone API")
 	fmt.Println("base URL is ", constants.APIURL)
-
-	// Establish DB connection
-	DBHelper.ConnectDB()
 
 	// Initiate iris
 	app := iris.Default()

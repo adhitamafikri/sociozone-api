@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	RegisterService "github.com/adhitamafikri/sociozone-api/services/register"
 	"github.com/kataras/iris"
 )
 
@@ -17,6 +18,8 @@ func Post(ctx iris.Context) {
 	name := ctx.FormValue("name")
 	username := ctx.FormValue("username")
 	password := ctx.FormValue("password")
+
+	RegisterService.RegisterUserData(&name, &username, &password)
 
 	ctx.JSON(iris.Map{
 		"status":   200,
