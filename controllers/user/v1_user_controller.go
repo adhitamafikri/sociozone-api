@@ -7,8 +7,8 @@ import (
 	"github.com/kataras/iris"
 )
 
-// Index retrieves all users
-func Index(ctx iris.Context) {
+// Get retrieves all users
+func Get(ctx iris.Context) {
 	fmt.Println("Getting all users from controlerr")
 	UserService.Index()
 

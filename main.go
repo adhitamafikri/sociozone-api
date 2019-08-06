@@ -21,11 +21,14 @@ func main() {
 	v1 := app.Party(constants.APIURL + "/v1")
 	{
 		v1.Get("/", getHome)
-		v1.Get("/login", LoginController.Index)
+
+		v1.Get("/login", LoginController.Get)
 		v1.Post("/login", LoginController.Post)
-		v1.Get("/register", RegisterController.Index)
+
+		v1.Get("/register", RegisterController.Get)
 		v1.Post("/register", RegisterController.Post)
-		v1.Get("/users", UserController.Index)
+
+		v1.Get("/users", UserController.Get)
 	}
 
 	app.Run(iris.Addr(":4001"))

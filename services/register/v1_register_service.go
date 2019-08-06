@@ -6,11 +6,11 @@ import (
 	"log"
 
 	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
-	objects "github.com/adhitamafikri/sociozone-api/objects/user"
+	"github.com/adhitamafikri/sociozone-api/objects/user"
 )
 
 // RegisterUserData will save all registration data to MongoDB
-func RegisterUserData(name *string, username *string, password *string) {
+func RegisterUserData(name, username, password *string) {
 	fmt.Println("Running RegisterUserData()")
 	client := DBHelper.ConnectDB()
 	collection := client.Database("sociozone").Collection("users")

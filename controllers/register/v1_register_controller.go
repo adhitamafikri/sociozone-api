@@ -5,8 +5,8 @@ import (
 	"github.com/kataras/iris"
 )
 
-// Index will open registration form
-func Index(ctx iris.Context) {
+// Get will open registration form
+func Get(ctx iris.Context) {
 	ctx.JSON(iris.Map{
 		"status":  200,
 		"message": "opening registration form",
