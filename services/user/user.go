@@ -16,6 +16,8 @@ func Index() {
 	fmt.Println("Getting all users")
 
 	client := DBHelper.ConnectDB()
+	defer DBHelper.DisconnectDB(client)
+
 	collection := client.Database("sociozone").Collection("users")
 
 	var result objects.User
@@ -26,5 +28,4 @@ func Index() {
 	}
 
 	fmt.Println(result)
-	DBHelper.DisconnectDB(client)
 }
