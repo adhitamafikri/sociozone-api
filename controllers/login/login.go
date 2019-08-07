@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"fmt"
+
 	LoginService "github.com/adhitamafikri/sociozone-api/services/login"
 	"github.com/kataras/iris"
 )
@@ -17,6 +19,7 @@ func Get(ctx iris.Context) {
 func Post(ctx iris.Context) {
 	username := ctx.FormValue("username")
 	password := ctx.FormValue("password")
+	fmt.Println(username, password)
 
 	LoginService.Login(&username, &password)
 

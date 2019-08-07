@@ -7,6 +7,7 @@ import (
 	"github.com/kataras/iris"
 
 	LoginController "github.com/adhitamafikri/sociozone-api/controllers/login"
+	PostsController "github.com/adhitamafikri/sociozone-api/controllers/posts"
 	RegisterController "github.com/adhitamafikri/sociozone-api/controllers/register"
 	UserController "github.com/adhitamafikri/sociozone-api/controllers/user"
 )
@@ -29,6 +30,8 @@ func main() {
 		v1.Post("/register", RegisterController.Post)
 
 		v1.Get("/users", UserController.Get)
+
+		v1.Get("/posts", PostsController.Get)
 	}
 
 	app.Run(iris.Addr(":4001"))
