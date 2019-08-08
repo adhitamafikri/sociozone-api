@@ -51,3 +51,12 @@ func RetrievePosts() {
 
 	fmt.Printf("Found multiple documents (array of pointers): %+v\n", results)
 }
+
+// UploadPost stores user's post into DB
+func UploadPost() {
+	fmt.Println("Uploading Post!")
+}
+
+func uploadPhotos() {
+	fmt.Println("upload photos")
+}

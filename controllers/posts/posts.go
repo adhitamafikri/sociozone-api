@@ -18,3 +18,15 @@ func Get(ctx iris.Context) {
 		"message": "Getting all posts",
 	})
 }
+
+// Post stores user's post into DB
+func Post(ctx iris.Context) {
+	fmt.Println("Posting user post")
+
+	PostsService.UploadPost()
+
+	ctx.JSON(iris.Map{
+		"status":  200,
+		"message": "Posting user post",
+	})
+}

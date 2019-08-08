@@ -13,7 +13,7 @@ func main() {
 	// Initiate iris
 	app := iris.Default()
 
-	routes.RouteGroup(app)
+	routes.CreateRouteGroup(app)
 
 	// fmt.Println(app.GetRoutes())
 
