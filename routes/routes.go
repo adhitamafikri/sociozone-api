@@ -1,4 +1,4 @@
-package routes
+package v1
 
 import (
 	"fmt"
@@ -12,23 +12,23 @@ import (
 	UserController "github.com/adhitamafikri/sociozone-api/controllers/user"
 )
 
-// RouteGroup returns all available routes for this API
+// RouteGroup returns all available v1 for this API
 func RouteGroup(app *iris.Application) {
-	fmt.Println("from routes.go, Base URL is ", constants.APIURL)
+	fmt.Println("from v1.go, Base URL is ", constants.APIURL)
 
-	routes := app.Party(constants.APIURL + "/v1")
+	v1 := app.Party(constants.APIURL + "/v1")
 	{
-		routes.Get("/", getHome)
+		v1.Get("/", getHome)
 
-		routes.Get("/login", LoginController.Get)
-		routes.Post("/login", LoginController.Post)
+		v1.Get("/login", LoginController.Get)
+		v1.Post("/login", LoginController.Post)
 
-		routes.Get("/register", RegisterController.Get)
-		routes.Post("/register", RegisterController.Post)
+		v1.Get("/register", RegisterController.Get)
+		v1.Post("/register", RegisterController.Post)
 
-		routes.Get("/users", UserController.Get)
+		v1.Get("/users", UserController.Get)
 
-		routes.Get("/posts", PostsController.Get)
+		v1.Get("/posts", PostsController.Get)
 	}
 }
 
