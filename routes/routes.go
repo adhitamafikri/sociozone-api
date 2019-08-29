@@ -2,9 +2,10 @@ package routes
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/adhitamafikri/sociozone-api/constants"
-	"github.com/kataras/iris"
+	"github.com/gin-gonic/gin"
 
 	LoginController "github.com/adhitamafikri/sociozone-api/controllers/login"
 	PostsController "github.com/adhitamafikri/sociozone-api/controllers/posts"
@@ -13,28 +14,28 @@ import (
 )
 
 // CreateRouteGroup returns all available v1 for this API
-func CreateRouteGroup(app *iris.Application) {
+func CreateRouteGroup(app *gin.Engine) {
 	fmt.Println("from v1.go, Base URL is ", constants.APIURL)
 
-	v1 := app.Party(constants.APIURL + "/v1")
+	v1 := app.Group(constants.APIURL + "/v1")
 	{
-		v1.Get("/", getHome)
+		v1.GET("/", getHome)
 
-		v1.Get("/login", LoginController.Get)
-		v1.Post("/login", LoginController.Post)
+		v1.GET("/login", LoginController.Get)
+		v1.POST("/login", LoginController.Post)
 
-		v1.Get("/register", RegisterController.Get)
-		v1.Post("/register", RegisterController.Post)
+		v1.GET("/register", RegisterController.Get)
+		v1.POST("/register", RegisterController.Post)
 
-		v1.Get("/users", UserController.Get)
+		v1.GET("/users", UserController.Get)
 
-		v1.Get("/posts", PostsController.Get)
-		v1.Post("/posts", PostsController.Post)
+		v1.GET("/posts", PostsController.Get)
+		v1.POST("/posts", PostsController.Post)
 	}
 }
 
-func getHome(ctx iris.Context) {
-	ctx.JSON(iris.Map{
+func getHome(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, gin.H{
 		"status":  200,
 		"message": "Welcome to home!",
 	})

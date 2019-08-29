@@ -12,7 +12,7 @@ import (
 )
 
 // Login compares data with the user data in the DB, then logs user in
-func Login(username, password *string) {
+func Login(username, password string) {
 	fmt.Println("Running Login() on login_service!")
 	client := DBHelper.ConnectDB()
 	defer DBHelper.DisconnectDB(client)
@@ -21,8 +21,8 @@ func Login(username, password *string) {
 
 	var result objects.User
 	filter := bson.D{
-		primitive.E{Key: "username", Value: *username},
-		primitive.E{Key: "password", Value: *password},
+		primitive.E{Key: "username", Value: username},
+		primitive.E{Key: "password", Value: password},
 	}
 
 	err := collection.FindOne(context.TODO(), filter).Decode(&result)

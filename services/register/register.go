@@ -10,14 +10,14 @@ import (
 )
 
 // RegisterUserData will save all registration data to MongoDB
-func RegisterUserData(name, username, password *string) {
+func RegisterUserData(name, username, password string) {
 	fmt.Println("Running RegisterUserData()")
 	client := DBHelper.ConnectDB()
 	defer DBHelper.DisconnectDB(client)
 
 	collection := client.Database("sociozone").Collection("users")
 
-	userData := objects.User{Name: *name, Username: *username, Password: *password}
+	userData := objects.User{Name: name, Username: username, Password: password}
 	insertResult, err := collection.InsertOne(context.TODO(), userData)
 
 	if err != nil {
