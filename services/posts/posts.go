@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
+	DBHelper "github.com/adhitamafikri/sociozone-api/utils/helpers/db"
 	"github.com/adhitamafikri/sociozone-api/objects/posts"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
