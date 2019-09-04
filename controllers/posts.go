@@ -4,30 +4,30 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/adhitamafikri/sociozone-api/constants/config"
 	"github.com/adhitamafikri/sociozone-api/services"
 	"github.com/gin-gonic/gin"
 )
 
-// Get retrieves all posts
-func GetPosts(ctx *gin.Context) {
-	fmt.Println("Getting all posts")
-
-	services.RetrievePosts()
-
-	ctx.JSON(http.StatusOK, gin.H{
-		"status":  200,
-		"message": "Getting all posts",
-	})
+type PostsController struct {
+	service services.PostsService
 }
 
-// Post stores user's post into DB
-func PostPosts(ctx *gin.Context) {
-	fmt.Println("Posting user post")
+func PostsControllerHandler(router *gin.Engine) {
+	handler := &PostsController{service: services.PostsServiceHandler()}
 
-	services.UploadPost()
+	group := router.Group(config.APIURL + "/v1/posts")
+	group.GET("/", handler.GetAllPosts)
+}
+
+// Get retrieves all posts
+func (handler *PostsController) GetAllPosts(ctx *gin.Context) {
+	fmt.Println("Getting all posts")
+
+	handler.service.GetAllPosts()
 
 	ctx.JSON(http.StatusOK, gin.H{
-		"status":  200,
-		"message": "Posting user post",
+		"status":  http.StatusOK,
+		"message": "Getting all posts",
 	})
 }

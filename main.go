@@ -13,8 +13,9 @@ func main() {
 	// Initiate iris
 	router := gin.Default()
 
-	controllers.UserControllerHandler(router)
 	controllers.AuthControllerHandler(router)
+	controllers.UserControllerHandler(router)
+	controllers.PostsControllerHandler(router)
 
 	router.Run(":4001")
 }
