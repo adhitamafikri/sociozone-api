@@ -4,14 +4,18 @@ import (
 	"fmt"
 	"net/http"
 
-	UserService "github.com/adhitamafikri/sociozone-api/services/user"
+	"github.com/adhitamafikri/sociozone-api/services/users"
 	"github.com/gin-gonic/gin"
 )
 
+type UsersController struct {
+	service services.UserService
+}
+
 // Get retrieves all users
-func Get(ctx *gin.Context) {
+func (ctrl *UsersController) Get(ctx *gin.Context) {
 	fmt.Println("Getting all users from controlerr")
-	UserService.Index()
+	ctrl.service.Index()
 
 	ctx.JSON(http.StatusOK, gin.H{
 		"status":  200,

@@ -1,31 +1,26 @@
-package services
+package repositories
 
 import (
 	"context"
-	"fmt"
-	"log"
 
-	DBHelper "github.com/adhitamafikri/sociozone-api/utils/helpers/db"
 	"github.com/adhitamafikri/sociozone-api/objects/user"
+	DBHelper "github.com/adhitamafikri/sociozone-api/utils/helpers/db"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// Index will retrieve all users
-func Index() {
-	fmt.Println("Getting all users")
+type UsersRepository struct {
+}
 
+func (repository *UsersRepository) GetUsers() (objects.UserResponseObject, error) {
 	client := DBHelper.ConnectDB()
 	defer DBHelper.DisconnectDB(client)
 
 	collection := client.Database("sociozone").Collection("users")
 
-	var result objects.User
-	filter := bson.D{primitive.E{Key: "name", Value: "Myree Bowden"}}
+	var result objects.UserResponseObject
+	filter := bson.D{primitive.E{Key: "name", Value: "Stokeley"}}
 	err := collection.FindOne(context.TODO(), filter).Decode(&result)
-	if err != nil {
-		log.Fatal(err)
-	}
 
-	fmt.Println(result)
+	return result, err
 }

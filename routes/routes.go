@@ -7,9 +7,9 @@ import (
 	"github.com/adhitamafikri/sociozone-api/constants"
 	"github.com/gin-gonic/gin"
 
-	LoginController "github.com/adhitamafikri/sociozone-api/controllers/login"
-	PostsController "github.com/adhitamafikri/sociozone-api/controllers/posts"
-	RegisterController "github.com/adhitamafikri/sociozone-api/controllers/register"
+	// LoginController "github.com/adhitamafikri/sociozone-api/controllers/login"
+	// PostsController "github.com/adhitamafikri/sociozone-api/controllers/posts"
+	// RegisterController "github.com/adhitamafikri/sociozone-api/controllers/register"
 	UserController "github.com/adhitamafikri/sociozone-api/controllers/user"
 )
 
@@ -19,18 +19,18 @@ func CreateRouteGroup(app *gin.Engine) {
 
 	v1 := app.Group(constants.APIURL + "/v1")
 	{
-		v1.GET("/", getHome)
-
-		v1.GET("/login", LoginController.Get)
-		v1.POST("/login", LoginController.Post)
-
-		v1.GET("/register", RegisterController.Get)
-		v1.POST("/register", RegisterController.Post)
+		// v1.GET("/", getHome)
+		//
+		// v1.GET("/login", LoginController.Get)
+		// v1.POST("/login", LoginController.Post)
+		//
+		// v1.GET("/register", RegisterController.Get)
+		// v1.POST("/register", RegisterController.Post)
 
 		v1.GET("/users", UserController.Get)
 
-		v1.GET("/posts", PostsController.Get)
-		v1.POST("/posts", PostsController.Post)
+		// v1.GET("/posts", PostsController.Get)
+		// v1.POST("/posts", PostsController.Post)
 	}
 }
 
