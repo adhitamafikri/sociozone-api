@@ -10,6 +10,7 @@ type UserResponseObject struct {
 
 // UserRequestObject struct represents user object in API Request
 type UserRequestObject struct {
+	Name     string `json:"name"`
 	Username string `json:"username"`
 	Password string `json:"password"`
 }

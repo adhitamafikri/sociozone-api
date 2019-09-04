@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	DBHelper "github.com/adhitamafikri/sociozone-api/utils/helpers/db"
-	"github.com/adhitamafikri/sociozone-api/objects/posts"
+	"github.com/adhitamafikri/sociozone-api/objects"
+	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -23,7 +23,7 @@ func RetrievePosts() {
 	findOptions := options.Find()
 	findOptions.SetLimit(5)
 
-	var results []*objects.Post
+	var results []*objects.PostsResponseObject
 
 	// Find() returns a cursor
 	cursor, err := collection.Find(context.TODO(), bson.D{{}}, findOptions)
@@ -33,7 +33,7 @@ func RetrievePosts() {
 
 	// Iterate the cursor
 	for cursor.Next(context.TODO()) {
-		var item objects.Post
+		var item objects.PostsResponseObject
 		err := cursor.Decode(&item)
 		if err != nil {
 			log.Fatal(err)

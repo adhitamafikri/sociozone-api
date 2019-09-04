@@ -3,16 +3,20 @@ package repositories
 import (
 	"context"
 
-	"github.com/adhitamafikri/sociozone-api/objects/user"
-	DBHelper "github.com/adhitamafikri/sociozone-api/utils/helpers/db"
+	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
+	"github.com/adhitamafikri/sociozone-api/objects"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type UsersRepository struct {
+type UserRepository struct{}
+
+func UserRepositoryHandler() UserRepository {
+	repository := UserRepository{}
+	return repository
 }
 
-func (repository *UsersRepository) GetUsers() (objects.UserResponseObject, error) {
+func (repository *UserRepository) GetAllUsers() (objects.UserResponseObject, error) {
 	client := DBHelper.ConnectDB()
 	defer DBHelper.DisconnectDB(client)
 
