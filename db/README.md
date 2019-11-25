@@ -1,2 +1,0 @@
-- use `migrations` to create SQL schemas e.g MySQL
-- use `schemas` to create NoSQL schemas e.g. MongoDB
