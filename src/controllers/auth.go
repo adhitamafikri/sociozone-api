@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/adhitamafikri/sociozone-api/constants/config"
-	"github.com/adhitamafikri/sociozone-api/services"
+	"github.com/adhitamafikri/sociozone-api/src/constants/config"
+	"github.com/adhitamafikri/sociozone-api/src/services"
 	"github.com/gin-gonic/gin"
 )
 

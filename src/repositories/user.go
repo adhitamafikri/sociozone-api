@@ -3,8 +3,8 @@ package repositories
 import (
 	"context"
 
-	DBHelper "github.com/adhitamafikri/sociozone-api/helpers/db"
-	"github.com/adhitamafikri/sociozone-api/objects"
+	DBHelper "github.com/adhitamafikri/sociozone-api/src/helpers/db"
+	"github.com/adhitamafikri/sociozone-api/src/objects"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/adhitamafikri/sociozone-api/controllers"
+	"github.com/adhitamafikri/sociozone-api/src/controllers"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )

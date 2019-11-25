@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/adhitamafikri/sociozone-api/objects"
-	"github.com/adhitamafikri/sociozone-api/repositories"
+	"github.com/adhitamafikri/sociozone-api/src/objects"
+	"github.com/adhitamafikri/sociozone-api/src/repositories"
 )
 
 type UserService struct {

@@ -3,7 +3,7 @@ package services
 import (
 	"fmt"
 
-	"github.com/adhitamafikri/sociozone-api/repositories"
+	"github.com/adhitamafikri/sociozone-api/src/repositories"
 )
 
 type AuthService struct {
