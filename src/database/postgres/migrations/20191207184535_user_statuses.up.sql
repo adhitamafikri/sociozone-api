@@ -1,5 +1,5 @@
 CREATE TABLE user_statuses (
-  id serial NOT NULL,
+  id smallserial NOT NULL,
 
   name varchar(50) NOT NULL,
 
