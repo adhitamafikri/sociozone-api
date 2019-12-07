@@ -1,0 +1,2 @@
+- to create migration run `migrate create -ext sql -dir path_to_migration/ -seq migration_name`
+- to run migration run `migrate -path path_to_migration/ -database 'postgres://mac@tcp(localhost:5432)/scz_db' up`

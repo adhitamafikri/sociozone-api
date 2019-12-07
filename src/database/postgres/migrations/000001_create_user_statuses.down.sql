@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS user_statuses (
+  id int PRIMARY KEY,
+
+  name varchar(50) NOT NULL,
+  
+  created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  updated_at timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at timestamp NULL DEFAULT NULL
+)
