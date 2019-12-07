@@ -1,5 +1,5 @@
 ## Creating Migrations
-`migrate create -ext sql -dir migrations -seq <migration_name>`
+`migrate create -ext sql -dir src/database/postgres/migrations <migration_name>`
 
 ## Run migration UP
 - `go run src/database/postgres/migrate_up.go`
