@@ -10,6 +10,7 @@ CREATE TABLE users (
   website varchar(150),
 
   -- created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  -- updated_at timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   -- PostgreSQL doesnt't have the feature like above
   -- we should create a trigger instead
   created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,

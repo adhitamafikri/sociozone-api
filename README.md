@@ -1,3 +1,6 @@
+## Sociozone (SCZ)
+a mini instagram. This project is built using Go and PostgreSQL
+
 ## Creating Migrations
 `migrate create -ext sql -dir src/database/postgres/migrations <migration_name>`
 
