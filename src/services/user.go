@@ -1,35 +1,26 @@
 package services
 
-import (
-	"fmt"
-	"log"
-
-	"github.com/adhitamafikri/sociozone-api/src/objects"
-	"github.com/adhitamafikri/sociozone-api/src/repositories"
-)
-
 type UserService struct {
-	repository repositories.UserRepository
 }
 
 func UserServiceHandler() UserService {
-	service := UserService{repository: repositories.UserRepositoryHandler()}
+	service := UserService{}
 	return service
 }
 
-type IUserService interface {
-	Index() objects.UserResponseObject
-}
+// type IUserService interface {
+// 	Index() objects.UserResponseObject
+// }
 
 // Index will retrieve all users
-func (service *UserService) GetAllUsers() objects.UserResponseObject {
-	fmt.Println("Getting all users")
+// func (service *UserService) GetAllUsers() objects.UserResponseObject {
+// 	fmt.Println("Getting all users")
 
-	result, err := service.repository.GetAllUsers()
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(result)
+// 	result, err := service.repository.GetAllUsers()
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	fmt.Println(result)
 
-	return result
-}
+// 	return result
+// }
