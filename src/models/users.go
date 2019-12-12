@@ -4,7 +4,7 @@ import "time"
 
 // User is DB schema for users
 type User struct {
-	ID             string     `gorm: "primary_key" json: "id"`
+	ID             string     `gorm:"primary_key" json: "id"`
 	Name           string     `gorm:"column: name" json:"name"`
 	Email          string     `gorm:"column: email" json:"email"`
 	Username       string     `gorm:"column: username" json:"username"`
